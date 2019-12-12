@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-hypertrack" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>HyperTrackWrapper</name>
+    <js-module name="HyperTrackWrapper" src="www/HyperTrackWrapper.js">
+        <clobbers target="cordova.plugins.HyperTrackWrapper" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="HyperTrackWrapper">
+                <param name="ios-package" value="HyperTrackWrapper" />
+            </feature>
+        </config-file>
+        <framework src="HTTransmitter" type="podspec" spec="~> 0.12.6" />
+        <source-file src="src/ios/HyperTrackWrapper.m" />
+    </platform>
+</plugin>
